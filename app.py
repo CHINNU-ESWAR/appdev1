@@ -7,6 +7,9 @@ def main():
   TEMPLATE=template_file.read()
   template_file.close()
   template=Template(TEMPLATE)
-  print(template.render(data_set=data_set))
+  content=template.render(data_set=data_set)
+ jinja2tohtml=open("exjinja2.html","w")
+ jinja2tohtml.write(content)
+ jinja2tohtml.close()
 if __name__=="__main__":
   main()
